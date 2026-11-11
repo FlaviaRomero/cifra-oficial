@@ -1,0 +1,9 @@
+[project]
+name = "cifra-oficial"
+version = "0.1.0"
+description = "Cifras oficiales del Perú (BCRP e INEI) con gráfico y fuente citada"
+requires-python = ">=3.11"
+dependencies = ["streamlit", "pandas", "httpx", "plotly", "folium", "streamlit-folium", "fastmcp>=4,<5"]
+
+[dependency-groups]
+dev = ["pytest"]

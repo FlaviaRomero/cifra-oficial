@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "cifra-oficial": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "mcp/server.py"],
+      "env": {}
+    }
+  }
+}
