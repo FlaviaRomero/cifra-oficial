@@ -8,7 +8,7 @@
 
 ## 2. Fundadora
 
-[COMPLETAR con tus palabras: quién eres, qué estudias o en qué trabajas, y por qué te importa este problema.]
+Flavia Romero, asistente en RSC, comercio exterior y sostenibilidad
 
 En la Diplomatura construí y validé las dos piezas de este producto:
 
@@ -34,9 +34,7 @@ Un número equivocado en una nota o en un informe cuesta credibilidad.
 
 **Evidencia, 3 conversaciones con usuarios potenciales:** [`docs/research/`](docs/research/)
 
-- [COMPLETAR: entrevista 1, con 1 línea de lo que aprendiste]
-- [COMPLETAR: entrevista 2]
-- [COMPLETAR: entrevista 3]
+- 
 
 ## 4. Solución e insight
 
@@ -71,9 +69,9 @@ A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento
 
 - **Capturas:** [COMPLETAR: 3 imágenes en `docs/img/`]
 
-  ![Buscar una cifra del BCRP](docs/img/1_bcrp.png)
-  ![Pobreza por departamento](docs/img/2_pobreza.png)
-  ![Conecta tu asistente de IA](docs/img/3_ia.png)
+ (docs/img/1.png)
+ (docs/img/2.png)
+ (docs/img/3.png)
 
 **Arquitectura:**
 
@@ -121,7 +119,7 @@ A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento
 ## 9. Qué hizo el agente
 
 - **Claude** generó la estructura del proyecto: `bcrp.py`, `enaho.py`, `app.py`, `mcp/server.py`, `tests/` y este README, a partir de mi código de la Tarea 4 (servidor MCP y Skills de la ENAHO).
-- **Yo**: [COMPLETAR. Por ejemplo: elegí el problema, hice las 3 entrevistas, probé la app con datos reales, la publiqué en Streamlit Cloud, ajusté textos y precios, y grabé la demo.]
+- **Yo**: elegí el problema, hice las 3 entrevistas, probé la app con datos reales, la publiqué en Streamlit Cloud, ajusté textos y precios, y grabé la demo.]
 - Los resultados de la ENAHO y del experimento con IA vienen de mi Tarea 4: https://github.com/FlaviaRomero/Tarea_4
 
 ## Limitaciones y próximos pasos
