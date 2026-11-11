@@ -1,6 +1,6 @@
 # 📊 Cifra Oficial
 
-**Demo:** [COMPLETAR: URL de Streamlit Cloud] · **Video de respaldo:** [COMPLETAR] · Proyecto final de la Diplomatura Q-Lab PUCP
+**Demo:** https://cifra-oficial-5mkaf7x9jhsetuowdztefm.streamlit.app/ · **Video de respaldo:** [COMPLETAR] · Proyecto final de la Diplomatura Q-Lab PUCP
 
 ## 1. One-liner
 
@@ -60,7 +60,7 @@ A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento
 
 ## 6. Demo
 
-- **URL pública:** [COMPLETAR]
+- **URL pública:** https://cifra-oficial-5mkaf7x9jhsetuowdztefm.streamlit.app/
 - **Correr en local:**
 
   ```bash
