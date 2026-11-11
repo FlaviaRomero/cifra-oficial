@@ -40,7 +40,7 @@ Un número equivocado en una nota o en un informe cuesta credibilidad.
 
 ## 4. Solución e insight
 
-Un buscador web en lenguaje simple ("inflación 12 meses lima", "tasa de referencia") que en segundos devuelve:
+Una pregunta rápida («pobreza en Puno», «¿cómo está el dólar?», en `consulta.py`) y un buscador web en lenguaje simple ("inflación 12 meses lima", "tasa de referencia") que en segundos devuelve:
 
 1. La serie oficial correcta.
 2. Su gráfico.
@@ -66,7 +66,7 @@ A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento
   ```bash
   uv sync
   uv run streamlit run app.py      # la app web
-  uv run pytest -q                 # pruebas: 4 passed
+  uv run pytest -q                 # pruebas: 5 passed
   ```
 
 - **Capturas:** [COMPLETAR: 3 imágenes en `docs/img/`]
@@ -114,7 +114,7 @@ A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento
 | Herramienta (sesión) | Dónde | Para qué |
 |---|---|---|
 | **MCP del BCRP** (Sesión 04) | `bcrp.py`, `mcp/server.py` | Buscar, descargar y resumir series; el servidor MCP para asistentes de IA |
-| **Mapas con Folium** (Sesión 06) | `app.py`, pestaña de pobreza | Mapa coroplético de pobreza por departamento |
+| **Mapas interactivos** (Sesión 06) | `app.py`, pestaña «Mapa de pobreza» | Mapa en el que haces clic en un departamento (Plotly/MapLibre) y mapa con capas en Folium |
 | **Skills de la ENAHO** (Sesión 16) | `data/indicadores_enaho_2024.csv` | Indicadores de pobreza calculados y validados con `limpiando-enaho` (Tarea 4) |
 | Dashboards (Sesión 05) | `app.py` | Interfaz web con Streamlit y Plotly |
 

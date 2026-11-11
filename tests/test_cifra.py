@@ -41,3 +41,13 @@ def test_enaho_validada():
     assert len(deps) == 25 and deps.ccdd.tolist() == [f"{i:02d}" for i in range(1, 26)]
     assert enaho.departamento("Cusco")["pobreza_pct"] == pytest.approx(18.5, abs=0.1)
     assert enaho.departamento("06")["grupo"] == "Cajamarca"
+
+
+def test_pregunta_rapida_entiende_departamentos_y_series():
+    from consulta import interpretar
+    assert interpretar("¿cuánta pobreza hay en Puno?") == {"tipo": "departamento", "valor": "Puno"}
+    assert interpretar("pobreza en el Perú")["tipo"] == "nacional"
+    assert interpretar("¿cómo está el dólar?") == {"tipo": "serie", "valor": "PD04638PD"}
+    assert interpretar("inflación de lima")["valor"] == "PN01273PM"
+    assert interpretar("exportaciones de oro")["tipo"] == "buscar"
+    assert interpretar("Cusco") == {"tipo": "departamento", "valor": "Cusco"}
