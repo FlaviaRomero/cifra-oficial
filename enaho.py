@@ -46,3 +46,49 @@ def departamento(nombre_o_codigo):
     if fila.empty:
         raise ValueError(f"No encuentro el departamento {nombre_o_codigo!r}.")
     return fila.iloc[0].to_dict()
+
+
+# ---------------------------------------------------------------- detalle por departamento y grupo
+DETALLE = RAIZ / "data" / "enaho_2024_detalle.csv"
+
+
+def hay_detalle():
+    return DETALLE.exists()
+
+
+@cache
+def detalle():
+    """Pobreza, pobreza extrema, población y número de pobres por departamento (ccdd '00' = Perú) y grupo.
+    Sale de scripts/agregar_enaho.py sobre la base validada de la Tarea 4."""
+    d = pd.read_csv(DETALLE, dtype={"ccdd": str})
+    d["ccdd"] = d.ccdd.str.zfill(2)
+    d["departamento"] = d.ccdd.map(NOMBRES).fillna("Perú")
+    return d
+
+
+def ficha_departamento(nombre):
+    """Total y cortes (área, sexo, edad) de un departamento, junto con los del Perú para comparar."""
+    d = detalle()
+    cod = next(k for k, v in NOMBRES.items() if v == nombre)
+    return d[d.ccdd == cod], d[d.ccdd == "00"]
+
+
+@cache
+def centroides():
+    """Centro aproximado de cada departamento (promedio ponderado por área del anillo exterior más grande)."""
+    import json
+    geo = json.loads(GEOJSON.read_text(encoding="utf-8"))
+    out = {}
+    for f in geo["features"]:
+        g = f["geometry"]
+        poligonos = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+        anillo = max((p[0] for p in poligonos), key=len)
+        a = cx = cy = 0.0
+        for (x0, y0), (x1, y1) in zip(anillo, anillo[1:] + anillo[:1]):
+            c = x0 * y1 - x1 * y0
+            a += c
+            cx += (x0 + x1) * c
+            cy += (y0 + y1) * c
+        a *= 0.5
+        out[str(f["properties"]["FIRST_IDDP"]).zfill(2)] = (cy / (6 * a), cx / (6 * a))   # (lat, lon)
+    return out

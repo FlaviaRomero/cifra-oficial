@@ -1,6 +1,6 @@
 # 📊 Cifra Oficial
 
-**Demo:** https://cifra-oficial-5mkaf7x9jhsetuowdztefm.streamlit.app/ · **Video de respaldo:** [COMPLETAR] · Proyecto final de la Diplomatura Q-Lab PUCP
+**Demo:** [COMPLETAR: URL de Streamlit Cloud] · **Video de respaldo:** [COMPLETAR] · Proyecto final de la Diplomatura Q-Lab PUCP
 
 ## 1. One-liner
 
@@ -8,7 +8,7 @@
 
 ## 2. Fundadora
 
-Flavia Romero, asistente en RSC, comercio exterior y sostenibilidad
+[COMPLETAR con tus palabras: quién eres, qué estudias o en qué trabajas, y por qué te importa este problema.]
 
 En la Diplomatura construí y validé las dos piezas de este producto:
 
@@ -34,7 +34,9 @@ Un número equivocado en una nota o en un informe cuesta credibilidad.
 
 **Evidencia, 3 conversaciones con usuarios potenciales:** [`docs/research/`](docs/research/)
 
-- 
+- [COMPLETAR: entrevista 1, con 1 línea de lo que aprendiste]
+- [COMPLETAR: entrevista 2]
+- [COMPLETAR: entrevista 3]
 
 ## 4. Solución e insight
 
@@ -46,7 +48,13 @@ Una pregunta rápida («pobreza en Puno», «¿cómo está el dólar?», en `con
 4. **Una frase lista para citar**, con el código de serie, el periodo y el enlace a la fuente.
 5. El CSV de los datos.
 
-A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento, área, sexo y edad (ENAHO).
+A eso se suma:
+
+- **Tablero «Perú hoy»**: 6 indicadores del BCRP en vivo, cada uno con su mini gráfico y la variación en 12 meses.
+- **Calculadora de inflación**: cuánto valen hoy S/ 100 de cualquier mes desde el año 2000, con el IPC mensual del BCRP.
+- **Mapa interactivo**: haces clic en un departamento y ves su ficha (pobreza, pobreza extrema, población, y desglose por área, sexo y edad frente al Perú).
+- **«¿Dónde viven los pobres?»**: mapa de burbujas y *treemap* con el **número** de personas pobres, no solo la tasa.
+- **Comparador** de hasta 4 departamentos, con un gráfico de dispersión de los 25.
 
 **Insight:** el problema no es que falten datos públicos, sino que **una cifra solo sirve si se puede citar y verificar**. Por eso cada número sale de una llamada repetible a la fuente oficial, nunca de un modelo de lenguaje. La misma capa de datos se ofrece como **servidor MCP**, para que los asistentes de IA que ya usan los periodistas respondan con cifras verificadas en vez de inventarlas.
 
@@ -58,7 +66,7 @@ A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento
 
 ## 6. Demo
 
-- **URL pública:** https://cifra-oficial-5mkaf7x9jhsetuowdztefm.streamlit.app/
+- **URL pública:** [COMPLETAR]
 - **Correr en local:**
 
   ```bash
@@ -67,11 +75,18 @@ A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento
   uv run pytest -q                 # pruebas: 5 passed
   ```
 
+- **Datos de la ENAHO por grupo** (`data/enaho_2024_detalle.csv`): se generan una vez desde la base validada de la
+  Tarea 4, sin publicar microdatos:
+
+  ```bash
+  uv run python scripts/agregar_enaho.py "C:/tarea 4/salidas/personas_2024.parquet" data/enaho_2024_detalle.csv
+  ```
+
 - **Capturas:** [COMPLETAR: 3 imágenes en `docs/img/`]
 
- (docs/img/1.png)
- (docs/img/2.png)
- (docs/img/3.png)
+  ![Buscar una cifra del BCRP](docs/img/1_bcrp.png)
+  ![Pobreza por departamento](docs/img/2_pobreza.png)
+  ![Conecta tu asistente de IA](docs/img/3_ia.png)
 
 **Arquitectura:**
 
@@ -119,7 +134,7 @@ A eso se suma el mapa y los gráficos de pobreza monetaria 2024 por departamento
 ## 9. Qué hizo el agente
 
 - **Claude** generó la estructura del proyecto: `bcrp.py`, `enaho.py`, `app.py`, `mcp/server.py`, `tests/` y este README, a partir de mi código de la Tarea 4 (servidor MCP y Skills de la ENAHO).
-- **Yo**: elegí el problema, hice las 3 entrevistas, probé la app con datos reales, la publiqué en Streamlit Cloud, ajusté textos y precios, y grabé la demo.]
+- **Yo**: [COMPLETAR. Por ejemplo: elegí el problema, hice las 3 entrevistas, probé la app con datos reales, la publiqué en Streamlit Cloud, ajusté textos y precios, y grabé la demo.]
 - Los resultados de la ENAHO y del experimento con IA vienen de mi Tarea 4: https://github.com/FlaviaRomero/Tarea_4
 
 ## Limitaciones y próximos pasos
